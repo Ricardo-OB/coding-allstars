@@ -17,21 +17,14 @@ def clonarPaginaWeb(URL):
     # navigate to the website
     driver.get(URL)
     driver.implicitly_wait(5)
-    
-    #dropdowns = driver.find_elements(By.XPATH, f'//button[contains(@class, "main-nav-dropdown")]')
-    #dropdowns = driver.find_elements(By.CSS_SELECTOR, "button.dropdown-toggle")
-   # dropdowns = driver.find_elements(By.XPATH, f'//button[contains(@class, "main-nav-dropdown js-main-nav-dropdown")]')
-    dropdowns1 = driver.find_elements(By.XPATH, '//nav[contains(@class, "main-nav-dropdown js-main-nav-dropdown")]')
-    dropdowns2 = driver.find_element(By.XPATH, '//button[@data-name = "MAIN_NAV_TRIGGER"]')
 
-    dropdowns = driver.find_elements(By.XPATH, '//button[contains(@data-name, "LARGE_UP_MAIN_NAV_TRIGGER")]')
-    print(dropdowns)
-    #actions = ActionChains(driver)
-    for dropdown in dropdowns:
-        driver.implicitly_wait(5)
-        #ActionChains(driver).move_to_element(dropdown).click(dropdown).perform()
-        dropdown.click()
-        time.sleep(0.5)
+    # dropdowns = driver.find_elements(By.XPATH, '//button[contains(@data-name, "LARGE_UP_MAIN_NAV_TRIGGER")]')
+
+    # for dropdown in dropdowns:
+    #     driver.implicitly_wait(5)
+    #     #ActionChains(driver).move_to_element(dropdown).click(dropdown).perform()
+    #     dropdown.click()
+    #     time.sleep(0.5)
 
     scroll_pos_init = driver.execute_script("return window.pageYOffset;")
     stepScroll = 300
